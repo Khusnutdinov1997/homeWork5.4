@@ -4,21 +4,22 @@
 //    b. Все четные числа увеличиваем на единицу
 //    c. Возвращаем кусок списка с 3-го по 7-й элемент
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        arrayProcessing(arr);
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.println(Arrays.toString(arrayProcessing(array)));
     }
 
-    public static void arrayProcessing(int[] arr) {
+    public static int[] arrayProcessing(int[] array) {
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                ++arr[i];
-            }
-            if(i>=3 && i<=7) {
-                System.out.println(arr[i]);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                ++array[i];
             }
         }
+        int result[] = Arrays.copyOfRange(array, 3, 8);
+        return result;
     }
 }
